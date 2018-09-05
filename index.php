@@ -61,13 +61,6 @@ echo '<pre>';print_r($arCityesTo);echo '</pre>';
                                 <button class="booking-form__count-passenger booking-form__count-passenger_plus booking-form__count-passenger_active" v-on:click.prevent="children += 1"><span class="visually-hidden">Плюс</span></button></span>
                             </p>
                         </li>
-                        <li class="booking-form__option booking-form__option_passengers text text_regular booking-form__option_passenger">
-                            <p class="booking-form__passenger text text_regular">Младенцы<span class="booking-form__container-passenger">
-                                      <button class="booking-form__count-passenger booking-form__count-passenger_minus" v-on:click.prevent="baby -= 1"><span class="visually-hidden">Минус</span></button>
-                                <input class="booking-form__counter text text_regular" v-model="baby" name="baby" required autocomplete="off" value="0">
-                                <button class="booking-form__count-passenger booking-form__count-passenger_plus booking-form__count-passenger_active" v-on:click.prevent="baby += 1"><span class="visually-hidden">Плюс</span></button></span>
-                            </p>
-                        </li>
                     </ul>
                 </div>
                 <p class="booking-form__container">
