@@ -1,3 +1,7 @@
+<?require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_cityes.php";
+echo '<pre>';print_r($arCityesFrom);echo '</pre>';
+echo '<pre>';print_r($arCityesTo);echo '</pre>';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -21,7 +25,8 @@
                     <label class="booking-form__label text text_regular" for="from">Откуда</label>
                     <input class="booking-form__input booking-form__input_select" id="from" autocomplete="off" name="from" v-model="city" v-on:click="showList(1)" placeholder="Город отправления" required>
                     <ul class="booking-form__cities-list" v-if="isShowList">
-                        <li class="booking-form__option booking-form__option_cities text text_regular" v-for="city in cities" v-on:click="setCity">{{city.name}}</li>
+                        <!--<li class="booking-form__option booking-form__option_cities text text_regular" v-for="city in cities" v-on:click="setCity">{{city.name}}</li>-->
+                        <>
                     </ul>
                 </div>
                 <div class="booking-form__container" @click="removeList" id="cityToHeader">
