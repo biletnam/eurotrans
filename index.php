@@ -15,7 +15,7 @@
         <div class="main-header__top"><a class="logo main-header__logo" href="/"><img class="logo__image" src="img/logo.png"></a><a class="contacts main-header__contacts" href="tel:8800121212"><span class="contacts__content text text_regular contacts__content_header">Звонок по России бесплатный</span><span class="contacts__phone text text_semibold contacts__content_header">8-800-123-12-12</span></a>
         </div>
         <section class="promo main-header__promo">
-            <h1 class="visually-hidden">Билет на автобусы</h1>
+            <h1 class="visually-hidden">Билетb на автобусы</h1>
             <h2 class="promo__title text text_extrabold">Дешевые билеты<span class="promo__full-stroke"> на автобус от перевозчика</span></h2>
             <form class="booking-form main-header__form" action="/booking.php" id="main-header__form" v-on:click.capture="removeList">
                 <div class="booking-form__container" @click="removeList" id="cityFromHeader">
