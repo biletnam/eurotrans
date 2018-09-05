@@ -1,50 +1,7 @@
 <?
-if (isset($_GET))
-{
-  $stripGet = array_map('strip_tags', $_GET);
-}
-
-$fromCity = isset($stripGet['from']) ? $stripGet['from'] : '';
-$toCity = isset($stripGet['to']) ? $stripGet['to'] : '';
-$dateRoutes = isset($stripGet['date']) ? $stripGet['date'] : '';
-$adult = isset($stripGet['adult']) ? intval($stripGet['adult']) : 0;
-$children = isset($stripGet['children']) ? intval($stripGet['children']) : 0;
-//$baby = isset($stripGet['baby']) ? intval($stripGet['baby']) : 0;
-
-$dateSearch = "date_search=$dateRoutes";
-$placeStart = "place_start=$fromCity";
-$placeEnd = "place_end=$toCity";
-
-function prepare_headers()
-{
-  $headers = [];
-  $headers[] = 'Content-type: application/json; charset=utf-8';
-  $headers[] = 'Accept: application/json';
-  return $headers;
-}
-
-$passenger = $adult + $children;
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://erp.evrotrans.net/search_reis.php?". $dateSearch ."&". $placeStart ."&". $placeEnd,
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_HTTPHEADER => prepare_headers(),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-$response = json_decode($response);
-
-echo '<pre>';print_r($response);echo '</pre>';
+require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_cityes.php";
+require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_tikets.php";
+echo '<pre>';print_r($arTikets);echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -77,9 +34,9 @@ echo '<pre>';print_r($response);echo '</pre>';
         <input class="booking-form__input booking-form__input_select" id="from" autocomplete="off" name="from"
                v-model="city" v-on:click="showList(1)" required placeholder="<?= $fromCity ?>">
         <ul class="booking-form__cities-list" v-if="isShowList">
-          <li class="booking-form__option booking-form__option_cities text text_regular" v-for="city in cities"
-              v-on:click="setCity">{{city.name}}
-          </li>
+            <?foreach ($arCityesFrom as $value):?>
+                <li class="booking-form__option booking-form__option_cities text text_regular" v-on:click="setCity"><?=$value->name?></li>
+            <?endforeach;?>
         </ul>
       </div>
       <div class="booking-form__container" @click="removeList" id="cityToFooter">
@@ -87,9 +44,9 @@ echo '<pre>';print_r($response);echo '</pre>';
         <input class="booking-form__input booking-form__input_select" id="to" autocomplete="off" name="to"
                v-model="city" v-on:click="showList(2)" required placeholder="<?= $toCity ?>">
         <ul class="booking-form__cities-list" v-if="isShowList">
-          <li class="booking-form__option booking-form__option_cities text text_regular" v-for="city in cities"
-              v-on:click="setCity">{{city.name}}
-          </li>
+            <?foreach ($arCityesTo as $value):?>
+                <li class="booking-form__option booking-form__option_cities text text_regular" v-on:click="setCity"><?=$value->name?></li>
+            <?endforeach;?>
         </ul>
       </div>
       <div class="booking-form__container">
@@ -125,20 +82,6 @@ echo '<pre>';print_r($response);echo '</pre>';
             <button
               class="booking-form__count-passenger booking-form__count-passenger_plus booking-form__count-passenger_active"
               v-on:click.prevent="children += 1"><span class="visually-hidden">Плюс</span></button></span>
-            </p>
-          </li>
-          <li
-            class="booking-form__option booking-form__option_passengers text text_regular booking-form__option_passenger">
-            <p class="booking-form__passenger text text_regular">Младенцы<span
-                class="booking-form__container-passenger">
-              <button class="booking-form__count-passenger booking-form__count-passenger_minus"
-                      v-on:click.prevent="baby -= 1"><span
-                  class="visually-hidden">Минус</span></button>
-              <input class="booking-form__counter text text_regular" v-model="baby" name="baby">
-              <button
-                class="booking-form__count-passenger booking-form__count-passenger_plus booking-form__count-passenger_active"
-                v-on:click.prevent="baby += 1"><span
-                  class="visually-hidden">Плюс</span></button></span>
             </p>
           </li>
         </ul>

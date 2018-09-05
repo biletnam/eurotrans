@@ -1,7 +1,4 @@
-<?require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_cityes.php";
-echo '<pre>';print_r($arCityesFrom);echo '</pre>';
-echo '<pre>';print_r($arCityesTo);echo '</pre>';
-?>
+<?require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_cityes.php";?>
 <!DOCTYPE html>
 <html>
 
