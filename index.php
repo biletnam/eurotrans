@@ -6,13 +6,15 @@
     <title>EuroTrans - заказ и бронирование автобсу</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- <link rel="stylesheet" href="libs/swiper/swiper.min.css"> -->
+		
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body class="page">
     <header class="main-header">
-        <div class="main-header__top"><a class="logo main-header__logo" href="/"><img class="logo__image" src="img/logo.png"></a><a class="contacts main-header__contacts" href="tel:8800121212"><span class="contacts__content text text_regular contacts__content_header">Звонок по России бесплатный</span><span class="contacts__phone text text_semibold contacts__content_header">8-800-123-12-12</span></a>
+        <div class="main-header__top"><a class="logo main-header__logo" href="/"><img class="logo__image" src="img/header-logo.png"></a><a class="contacts main-header__contacts" href="tel:8800121212"><span class="contacts__content text text_regular contacts__content_header">Звонок по России бесплатный</span><span class="contacts__phone text text_semibold contacts__content_header">8-800-123-12-12</span></a>
         </div>
         <section class="promo main-header__promo">
             <h1 class="visually-hidden">Билетb на автобусы</h1>
@@ -71,7 +73,7 @@
             <h1 class="routes__title text text_semibold">Популярные направления</h1>
             <ul class="routes__list">
                 <li class="routes__item">
-                    <article class="route routes__article">
+                    <article class="route routes__article" style='background-image: url("../img/routes-bg.jpg");'>
                         <h2 class="route__title text text_semibold">Ставрополь - Москва</h2>
                         <p class="route__sending text text_regular">Отправление</p>
                         <ul class="route__list">
@@ -83,7 +85,7 @@
                     </article>
                 </li>
                 <li class="routes__item">
-                    <article class="route routes__article">
+                    <article class="route routes__article" style='background-image: url("../img/stavropol.jpg");'>
                         <h2 class="route__title text text_semibold">Москва - Ставрополь</h2>
                         <p class="route__sending text text_regular">Отправление</p>
                         <ul class="route__list">
@@ -95,7 +97,7 @@
                     </article>
                 </li>
                 <li class="routes__item">
-                    <article class="route routes__article">
+                    <article class="route routes__article" style='background-image: url("../img/routes-bg.jpg");'>
                         <h2 class="route__title text text_semibold">Нефтекумск - Москва</h2>
                         <p class="route__sending text text_regular">Отправление</p>
                         <ul class="route__list">
@@ -107,7 +109,7 @@
                     </article>
                 </li>
                 <li class="routes__item">
-                    <article class="route routes__article">
+                    <article class="route routes__article" style='background-image: url("../img/Neftekumsk.jpg");'>
                         <h2 class="route__title text text_semibold">Москва - Нефтекумск</h2>
                         <p class="route__sending text text_regular">Отправление</p>
                         <ul class="route__list">
@@ -119,7 +121,7 @@
                     </article>
                 </li>
                 <li class="routes__item">
-                    <article class="route routes__article">
+                    <article class="route routes__article" style='background-image: url("../img/Budenovsk.jpg");'>
                         <h2 class="route__title text text_semibold">Будденовск - Москва</h2>
                         <p class="route__sending text text_regular">Отправление</p>
                         <ul class="route__list">
@@ -131,8 +133,8 @@
                     </article>
                 </li>
                 <li class="routes__item">
-                    <article class="route routes__article">
-                        <h2 class="route__title text text_semibold">Светлоград - Москва</h2>
+                    <article class="route routes__article" style='background-image: url("../img/Levokum.jpg");'>
+                        <h2 class="route__title text text_semibold">Левокумское - Москва</h2>
                         <p class="route__sending text text_regular">Отправление</p>
                         <ul class="route__list">
                             <li class="route__item text text_regular"><span class="route__date">08.06 |</span><span class="route__time">09:00</span></li>
@@ -145,29 +147,54 @@
             </ul>
         </section>
         <section class="advantage page__advantage">
-            <h1 class="advantage__title text text_semibold">Преимущество бронирования у нас</h1>
-            <ul class="advantage__list">
-                <li class="advantage__item advantage__item_insurance">
-                    <p class="advantage__subtitle text text_semibold">Все пассажиры застрахованны</p>
-                    <p class="advantage__content text text_regular">В стоимость билета включено страхование.</p>
-                </li>
-                <li class="advantage__item advantage__item_safety">
-                    <p class="advantage__subtitle text text_semibold">Безопасный поездки</p>
-                    <p class="advantage__content text text_regular">Наши автобусы проходят технический осмотр, а водители медицинскую проверку перед каждой поездкой. На случай непредвиденных ситуаций у нас всегда есть дежурный водитель и резервный автобус.</p>
-                </li>
-                <li class="advantage__item advantage__item_driver">
-                    <p class="advantage__subtitle text text_semibold">Опытные водители</p>
-                    <p class="advantage__content text text_regular">Вас будет перевозить водитель со стажем пассажирских перевозок не менее 10 лет.</p>
-                </li>
-                <li class="advantage__item advantage__item_card-payment">
-                    <p class="advantage__subtitle text text_semibold">Безопасная олата картой</p>
-                    <p class="advantage__content text text_regular">Мы работаем только с надежными системами приема платежей, которые шифруют данные и регулярно проходят проверку безопасности по стандартам Visa и Mastercard.</p>
-                </li>
-                <li class="advantage__item advantage__item_station">
-                    <p class="advantage__subtitle text text_semibold">Остановки каждые 4 часа для обеда и отдыха</p>
-                    <p class="advantage__content text text_regular">Ваш маршрут предусматривает необходимые остановки в местах, где можно можно легко перекусить или плотно пообедать домашней едой, а также пройтись и размяться.</p>
-                </li>
-            </ul>
+						<h1 class="advantage__title text text_semibold">Преимущество бронирования у нас</h1>
+												<!-- Slider main container -->
+
+            
+							<div class="swiper-container">
+									<!-- Additional required wrapper -->
+									<div class="swiper-wrapper">
+											<!-- Slides -->
+											<ul class="advantage__list">
+										<div class="swiper-slide">
+											<li class="advantage__item advantage__item_insurance">
+												<p class="advantage__subtitle text text_semibold">Все пассажиры застрахованны</p>
+												<p class="advantage__content text text_regular">В стоимость билета включено страхование.</p>
+											</li>
+										</div>
+										<div class="swiper-slide">
+											<li class="advantage__item advantage__item_safety">
+													<p class="advantage__subtitle text text_semibold">Безопасный поездки</p>
+													<p class="advantage__content text text_regular">Наши автобусы проходят технический осмотр, а водители медицинскую проверку перед каждой поездкой. На случай непредвиденных ситуаций у нас всегда есть дежурный водитель и резервный автобус.</p>
+											</li>
+										</div>
+										<div class="swiper-slide">
+											<li class="advantage__item advantage__item_driver">
+													<p class="advantage__subtitle text text_semibold">Опытные водители</p>
+													<p class="advantage__content text text_regular">Вас будет перевозить водитель со стажем пассажирских перевозок не менее 10 лет.</p>
+											</li>
+										</div>
+										<div class="swiper-slide">
+											<li class="advantage__item advantage__item_card-payment">
+													<p class="advantage__subtitle text text_semibold">Безопасная олата картой</p>
+													<p class="advantage__content text text_regular">Мы работаем только с надежными системами приема платежей, которые шифруют данные и регулярно проходят проверку безопасности по стандартам Visa и Mastercard.</p>
+											</li>
+										</div>
+										<div class="swiper-slide">
+											<li class="advantage__item advantage__item_station">
+													<p class="advantage__subtitle text text_semibold">Остановки каждые 4 часа для обеда и отдыха</p>
+													<p class="advantage__content text text_regular">Ваш маршрут предусматривает необходимые остановки в местах, где можно можно легко перекусить или плотно пообедать домашней едой, а также пройтись и размяться.</p>
+											</li>
+										</div>
+											</ul>
+								</div>
+								<!-- If we need pagination -->
+								<div class="swiper-pagination"></div>
+					
+						
+																
+
+						</div>
             <div class="control advantage__control">
                 <ul class="control__list">
                     <li class="control__item control__item_active"><span class="visually-hidden">0</span></li>
@@ -181,10 +208,15 @@
         <section class="feedback page__feedback">
             <div class="feedback__wrapper">
                 <div class="feedback__container">
-                    <h1 class="feedback__title text text_semibold">Контолируем качество перевозок</h1>
+										<h1 class="feedback__title text text_semibold">Контолируем качество перевозок</h1>
+										<img src="img/gen-dir.jpg" class='feedback__img-dir' alt="">
                     <p class="feedback__content text text_regular">
-                        Вы можете оставить анонимный отзыв о водителях, сервисе или о поездке. Мы будем все поправлять, а вы получите бонус на следующую поездку.</p>
-                </div><a class="feedback__link button button_theme_red text text_regular" href="feedback.html">Оставить отзыв</a>
+												Максим Яцунов, заместитель генерального директора.
+												<span class='feedback__content--quote'> Помогите нам стать лучше. Если у вас есть пожелания, рекомендации или претензии относительно оказанных услуг, пожалуйста, направьте их лично мне</span>
+											
+										</p>
+								</div>
+								<a class=" button button_theme_red text text_regular feedback__link--write" >Написать руководителю</a>
             </div>
         </section>
         <section class="buses page__buses">
@@ -272,8 +304,8 @@
 						<div class="ready__items">
 							<div class="ready__item">
 								<img src="img/features-1.jpg" alt="EuroTrans" class="ready__item-img">
-								<h3 class="ready__item-title">Отправляем автобусы на ТО перед каждой.</h3>
-								<p class="ready__item-text">У нас есть собственная станция тех.осмотра, на которой механик ОТК и водители проверяют автобусы перед рейсами. В случае выявления неисправности, на рейс выходит резервный автобус.</p>
+								<h3 class="ready__item-title">Отправляем автобусы на ТО перед каждой поездкой.</h3>
+								<p class="ready__item-text">Проверяем транспорт на собственной станции техосмотра. В случае выявления неисправности, на рейс выходит резервный автобус.</p>
 							</div>
 							<div class="ready__item">
 								<img src="img/features-2.jpg" alt="EuroTrans" class="ready__item-img">
@@ -373,7 +405,10 @@
     </main>
     <footer class="main-footer page__main-footer">
         <section class="main-footer__top">
-            <h2 class="visually-hidden">Верхняя секция основного подвала страницы</h2><a class="logo main-footer__logo" href="/"><img class="logo__image" src="img/logo.png"></a>
+						<h2 class="visually-hidden">Верхняя секция основного подвала страницы</h2>
+						<a class="logo main-footer__logo" href="/">
+							<img class="logo__image" src="img/logo.png">
+						</a>
             <section class="additional-menu main-footer__company">
                 <h3 class="additional-menu__title text text_semibold">O компании</h3>
                 <ul class="additional-menu__list">
@@ -453,8 +488,11 @@
             time_24hr: true,
             locale: 'ru'
         });
-    </script>
-    <script src="js/main.js"></script>
+		</script>
+		
+		<!-- <script src="libs/swiper/swiper.min.js"></script> -->
+
+		<script src="js/main.js"></script>
 </body>
 
 </html>
