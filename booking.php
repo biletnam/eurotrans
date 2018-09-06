@@ -1,7 +1,7 @@
 <?
 require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_cityes.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_tikets.php";
-echo '<pre>';print_r($arTikets);echo '</pre>';
+//echo '<pre>';print_r($arTikets);echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +18,6 @@ echo '<pre>';print_r($arTikets);echo '</pre>';
 <body class="page page_inner">
 <header class="main-header main-header_booking">
   <div class="main-header__top"><a class="logo main-header__logo" href="/"><img class="logo__image" src="img/logo.png"></a>
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs__item breadcrumbs__item_active text text_regular">Выбор</li>
-      <li class="breadcrumbs__item text text_regular">Оформление</li>
-      <li class="breadcrumbs__item text text_regular">Оплата</li>
-    </ul>
   </div>
   <div class="main-header__booking-form">
     <h1 class="main-header__title text text_regular">
@@ -129,7 +124,7 @@ echo '<pre>';print_r($arTikets);echo '</pre>';
                         <?$price = ($routes->route[0]->price_from->adult * $adult)+($routes->route[0]->price_from->children * $children);?>
                         <?=$price?> р.
                     </p>
-                    <a class="ticket__link button button_theme_red text text_regular" href="formation.php?id=<?= $route->route[count($route->route) - 1]->id ?>&adult=<?= $adult ?>&children=<?= $children ?>">
+                    <a class="ticket__link button button_theme_red text text_regular" href="formation.php?id=<?= $routes->id ?>&adult=<?= $adult ?>&children=<?= $children ?>">
                         Купить билет
                     </a>
                 </div>
