@@ -6,7 +6,7 @@
     <title>EuroTrans - заказ и бронирование автобсу</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
@@ -15,7 +15,7 @@
         <div class="main-header__top"><a class="logo main-header__logo" href="/"><img class="logo__image" src="img/logo.png"></a><a class="contacts main-header__contacts" href="tel:8800121212"><span class="contacts__content text text_regular contacts__content_header">Звонок по России бесплатный</span><span class="contacts__phone text text_semibold contacts__content_header">8-800-123-12-12</span></a>
         </div>
         <section class="promo main-header__promo">
-            <h1 class="visually-hidden">Билет на автобусы</h1>
+            <h1 class="visually-hidden">Билетb на автобусы</h1>
             <h2 class="promo__title text text_extrabold">Дешевые билеты<span class="promo__full-stroke"> на автобус от перевозчика</span></h2>
             <form class="booking-form main-header__form" action="/booking.php" id="main-header__form" v-on:click.capture="removeList">
                 <div class="booking-form__container" @click="removeList" id="cityFromHeader">
@@ -149,23 +149,23 @@
             <ul class="advantage__list">
                 <li class="advantage__item advantage__item_insurance">
                     <p class="advantage__subtitle text text_semibold">Все пассажиры застрахованны</p>
-                    <p class="advantage__content text text_regular">У нас застрахованны все пассажиры которых мы перевозим на своих автобусах на 3 000 000 рублей.</p>
+                    <p class="advantage__content text text_regular">В стоимость билета включено страхование.</p>
                 </li>
                 <li class="advantage__item advantage__item_safety">
                     <p class="advantage__subtitle text text_semibold">Безопасный поездки</p>
-                    <p class="advantage__content text text_regular">Перед каждой поездкой, каждый автобус проходит ТО. Водители проходят медицинскую проверку.</p>
+                    <p class="advantage__content text text_regular">Наши автобусы проходят технический осмотр, а водители медицинскую проверку перед каждой поездкой. На случай непредвиденных ситуаций у нас всегда есть дежурный водитель и резервный автобус.</p>
                 </li>
                 <li class="advantage__item advantage__item_driver">
                     <p class="advantage__subtitle text text_semibold">Опытные водители</p>
-                    <p class="advantage__content text text_regular">Все водители со стажем пассажирских перевозок</p>
+                    <p class="advantage__content text text_regular">Вас будет перевозить водитель со стажем пассажирских перевозок не менее 10 лет.</p>
                 </li>
                 <li class="advantage__item advantage__item_card-payment">
                     <p class="advantage__subtitle text text_semibold">Безопасная олата картой</p>
-                    <p class="advantage__content text text_regular">На сайте можно оплатить билет картой любого банка или электронными деньгами</p>
+                    <p class="advantage__content text text_regular">Мы работаем только с надежными системами приема платежей, которые шифруют данные и регулярно проходят проверку безопасности по стандартам Visa и Mastercard.</p>
                 </li>
                 <li class="advantage__item advantage__item_station">
                     <p class="advantage__subtitle text text_semibold">Остановки каждые 4 часа для обеда и отдыха</p>
-                    <p class="advantage__content text text_regular">Остановка каждые 4 часа на пунктах отдыха, где можно сходить в туалет, покушать домашней еды, купить что-то в дорогу</p>
+                    <p class="advantage__content text text_regular">Ваш маршрут предусматривает необходимые остановки в местах, где можно можно легко перекусить или плотно пообедать домашней едой, а также пройтись и размяться.</p>
                 </li>
             </ul>
             <div class="control advantage__control">
@@ -200,10 +200,8 @@
                     <div class="buses__container">
                         <p class="buses__model text text_semibold">Mercedes Sprinter
                             <ul class="buses__features-list">
-                                <li class="buses__features-item text text_regular">Комфортабельный салон</li>
-                                <li class="buses__features-item text text_regular"> Пневмоподвеска</li>
-                                <li class="buses__features-item text text_regular">USB-порты над сидениями</li>
-                                <li class="buses__features-item text text_regular">Откидывающиеся сидения</li>
+                                <li class="buses__features-item text text_regular">Комфортные сидения</li>
+                                <li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
                                 <li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
                             </ul>
                         </p>
@@ -216,11 +214,10 @@
                     <div class="buses__container">
                         <p class="buses__model text text_semibold">Hyundai
                             <ul class="buses__features-list">
-                                <li class="buses__features-item text text_regular">Комфортабельный салон</li>
-                                <li class="buses__features-item text text_regular"> Пневмоподвеска</li>
-                                <li class="buses__features-item text text_regular">USB-порты над сидениями</li>
-                                <li class="buses__features-item text text_regular">Откидывающиеся сидения</li>
+                                <li class="buses__features-item text text_regular">Комфортные сидения</li>
+                                <li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
                                 <li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
+                                <li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
                             </ul>
                         </p>
                     </div>
@@ -232,11 +229,12 @@
                     <div class="buses__container">
                         <p class="buses__model text text_semibold">1,5 этажные автобусы
                             <ul class="buses__features-list">
-                                <li class="buses__features-item text text_regular">Комфортабельный салон</li>
-                                <li class="buses__features-item text text_regular"> Пневмоподвеска</li>
-                                <li class="buses__features-item text text_regular">USB-порты над сидениями</li>
-                                <li class="buses__features-item text text_regular">Откидывающиеся сидения</li>
+                                <li class="buses__features-item text text_regular">Комфортные сидения</li>
+                                <li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
                                 <li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
+                                <li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
+                                <li class="buses__features-item text text_regular">Туалет</li>
+                                <li class="buses__features-item text text_regular">Мини-кухня</li>
                             </ul>
                         </p>
                     </div>
@@ -248,11 +246,12 @@
                     <div class="buses__container">
                         <p class="buses__model text text_semibold">2 этажные автобусы
                             <ul class="buses__features-list">
-                                <li class="buses__features-item text text_regular">Комфортабельный салон</li>
-                                <li class="buses__features-item text text_regular"> Пневмоподвеска</li>
-                                <li class="buses__features-item text text_regular">USB-порты над сидениями</li>
-                                <li class="buses__features-item text text_regular">Откидывающиеся сидения</li>
+                                <li class="buses__features-item text text_regular">Комфортные сидения</li>
+                                <li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
                                 <li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
+                                <li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
+                                <li class="buses__features-item text text_regular">Туалет</li>
+                                <li class="buses__features-item text text_regular">Мини-кухня</li>
                             </ul>
                         </p>
                     </div>
@@ -270,27 +269,24 @@
         <!--include blocks/route-map/route-map-->
         <section class="features page__features">
             <h2 class="features__title text text_semibold">Исправные и чистые автобусы</h2>
-            <ul class="features__list">
-                <li class="features__item"><img class="features__image" src="img/features-1.jpg">
-                    <div class="features__container">
-                        <h3 class="features__subtitle text text_semibold">Перед каждой отправкой автобусы проходят ТО</h3>
-                        <p class="features__descritption text text_regular">У нас есть своя станция тех.осмотра где механик ОТК и водители проверяют автобусы перед рейсами. Если есть какаято неисправность, то на рейс выходит резервный автобус и отправляется на нашу ремонтную станцию</p>
-                    </div>
-                </li>
-                <li class="features__item"><img class="features__image" src="img/features-2.jpg">
-                    <div class="features__container">
-                        <h3 class="features__subtitle text text_semibold">У нас есть медпункт с штатным мед. персоналом</h3>
-                        <p class="features__descritption text text_regular">Проверем водителей перед рейсами на артериальное давление, проверем алкотестером, и смотрим на общее состяние водителей. Если показатели водителя выходт за рамки нормы, ео заменяют другим.
-                        </p>
-                    </div>
-                </li>
-                <li class="features__item"><img class="features__image" src="img/features-3.jpg">
-                    <div class="features__container">
-                        <h3 class="features__subtitle text text_semibold">Моем и пылесосим автобусы перед рейсами</h3>
-                        <p class="features__descritption text text_regular">После рейса технички убирают салон автобуса. Пылесосят сидения,вытирают пыль, моют пол и убирают мусор.</p>
-                    </div>
-                </li>
-            </ul>
+						<div class="ready__items">
+							<div class="ready__item">
+								<img src="img/features-1.jpg" alt="EuroTrans" class="ready__item-img">
+								<h3 class="ready__item-title">Отправляем автобусы на ТО перед каждой.</h3>
+								<p class="ready__item-text">У нас есть собственная станция тех.осмотра, на которой механик ОТК и водители проверяют автобусы перед рейсами. В случае выявления неисправности, на рейс выходит резервный автобус.</p>
+							</div>
+							<div class="ready__item">
+								<img src="img/features-2.jpg" alt="EuroTrans" class="ready__item-img">
+								<h3 class="ready__item-title">Проводим медосмотр водителей перед рейсом. </h3>
+								<p class="ready__item-text">Если наш мед.персонал выявляет отклонения от нормы в самочувствии водителя, его заменяет коллега.</p>
+							</div>
+							<div class="ready__item">
+								<img src="img/features-3.jpg" alt="EuroTrans" class="ready__item-img">
+								<h3 class="ready__item-title">Выводим транспорт на маршрут только после тщательной уборки. </h3>
+								<p class="ready__item-text">Моем и пылесосим автобусы до и после рейсов.</p>
+							</div>
+						</div>
+
             <div class="control features__control">
                 <ul class="control__list">
                     <li class="control__item control__item_active"><span class="visually-hidden">0</span></li>
@@ -356,7 +352,7 @@
                     </p>
                 </form>
             </section>
-            <section class="booking__container">
+            <!-- <section class="booking__container">
                 <h3 class="booking__subtitle text text_semibold">Наши акции</h3>
                 <ul class="booking__list">
                     <li class="booking__item">
@@ -372,7 +368,7 @@
                         <li class="control__item"><span class="visually-hidden">1</span></li>
                     </ul>
                 </div>
-            </section>
+            </section> -->
         </section>
     </main>
     <footer class="main-footer page__main-footer">
