@@ -1,6 +1,9 @@
 (function() {
   "use strict";
 
+
+
+
   var feedback = () => {
     const feedbackButton = document.querySelector(`.feedback__link`);
 
@@ -331,6 +334,8 @@
   }
 })();
 
+
+
 function checkInput(inputText, parentInput) {
   inputText.addEventListener("focus", function(e) {
     this.nextElementSibling.style.display = "block";
@@ -458,3 +463,30 @@ if (document.querySelector("#cityFromFooter")) {
 // window.addEventListener('resize', function () {
 // 	initSwiper(swiperAdvantage, '.swiper-container', ".swiper-pagination");
 // });
+
+
+document.querySelector(".feedback__link--write").addEventListener('click', function (e) {
+	document.querySelector(".popup-boss").classList.add("popup-boss--active");
+	document.querySelector("body").style.overflowY = "hidden";
+});
+
+document.querySelector('.popup-boss__close').addEventListener('click', function (e) {
+	document.querySelector(".popup-boss").classList.remove("popup-boss--active");
+	document.querySelector('body').style.overflowY = "auto";
+});
+
+document.querySelector('.popup-boss__mask').addEventListener('click', function (e) {
+	document.querySelector(".popup-boss").classList.remove("popup-boss--active");
+	document.querySelector('body').style.overflowY = "auto";
+});
+
+document.querySelector('.popup-thank__close').addEventListener('click', function (e) {
+	document.querySelector(".popup-thank").classList.remove("popup-thank--active");
+	document.querySelector('body').style.overflowY = "auto";
+});
+
+document.querySelector('.popup-thank__mask').addEventListener('click', function (e) {
+	document.querySelector(".popup-thank").classList.remove("popup-thank--active");
+	document.querySelector('body').style.overflowY = "auto";
+});
+

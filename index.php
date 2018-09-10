@@ -216,7 +216,8 @@
 											
 										</p>
 								</div>
-								<a class=" button button_theme_red text text_regular feedback__link--write" >Написать руководителю</a>
+								<a class="button button_theme_red text text_regular feedback__link--write">Написать руководителю</a>
+								<input type="hidden" class='feedback__link '>
             </div>
         </section>
         <section class="buses page__buses">
@@ -474,6 +475,32 @@
         </div>
       </section>
     </template>
+
+	<div class="popup-boss" >
+		<div class="popup-boss__mask"></div>
+		<div class="popup-boss__window">
+			<div class="popup-boss__close"></div>
+			<form id="order-popup-boss" class="popup-boss__form-order" method="POST" onsubmit='return false;'>
+				<input class='popup-boss__form-inf' type="text" name="name" placeholder="Ваше имя" required>
+				<input class='popup-boss__form-inf' type="text" name="phone" placeholder="Ваш телефон" required>
+				<input class='popup-boss__form-inf' type="email" name="email" placeholder="Ваш email" required>
+				<textarea name="text" class='popup-boss__form-inf popup-boss__form-inf--textarea' placeholder='Текст обращения'></textarea>
+				<input class='popup-boss__button' type="submit" value="Отправить">
+			</form>
+		</div>
+	</div>
+
+	<div class="popup-thank">
+		<div class="popup-thank__mask"></div>
+		<div class="popup-thank__window">
+			<div class="popup-thank__close"></div>
+			<img src="img/gen-dir.jpg" alt="EuroTrans" class="popup-thank__img">
+			<p class="popup-thank__text">Спасибо, что помогаете нам стать лучше. Я лично рассмотрю ваше обращение и отвечу вам на него в течение трех дней.</p>
+		</div>
+	</div>
+
+
+
     <script src="js/flatpickr.min.js"></script>
     <script>
         flatpickr('#dateHeader', {
@@ -493,6 +520,7 @@
 		<!-- <script src="libs/swiper/swiper.min.js"></script> -->
 
 		<script src="js/main.js"></script>
+
 </body>
 
 </html>
