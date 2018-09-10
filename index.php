@@ -11,6 +11,7 @@
 		<!-- <link rel="stylesheet" href="libs/swiper/swiper.min.css"> -->
 		
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
 </head>
 
 <body class="page">
