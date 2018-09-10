@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
-<body class="page">
+<body class="page">cityFromHeader
     <header class="main-header">
         <div class="main-header__top"><a class="logo main-header__logo" href="/"><img class="logo__image" src="img/logo.png"></a><a class="contacts main-header__contacts" href="tel:8800121212"><span class="contacts__content text text_regular contacts__content_header">Звонок по России бесплатный</span><span class="contacts__phone text text_semibold contacts__content_header">8-800-123-12-12</span></a>
         </div>
