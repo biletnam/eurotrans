@@ -37,14 +37,20 @@ foreach ($arTargets as $key =>$tem)
     $response = json_decode($response);
     if ($key == 1)
     {
-        $arCityesFrom = array();
-        foreach ($response->destination as $value)
-        $arCityesFrom[] = $value;
+        if (!(empty($response->destination)))
+        {
+            $arCityesFrom = array();
+            foreach ($response->destination as $value)
+                $arCityesFrom[] = $value;
+        }
     }
     else
     {
-        $arCityesTo = array();
-        foreach ($response->destination as $value)
-        $arCityesTo[] = $value;
+        if (!(empty($response->destination)))
+        {
+            $arCityesTo = array();
+            foreach ($response->destination as $value)
+                $arCityesTo[] = $value;
+        }
     }
 }
