@@ -1472,23 +1472,12 @@ span.flatpickr-weekday {
   text-align: center;
 }
 
-.advantage__list {
-  max-width: 320px;
-  margin: 0 auto;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  list-style: none;
-}
+
 
 .advantage__item {
   position: relative;
   padding-top: 120px;
-  display: none;
+  /* display: none; */
 }
 
 .advantage__item_insurance {
@@ -1738,9 +1727,9 @@ span.flatpickr-weekday {
   list-style: none;
 }
 
-.buses__item:not(:first-child) {
+/* .buses__item:not(:first-child) {
   display: none;
-}
+} */
 
 .buses__image {
   display: block;
@@ -2195,7 +2184,14 @@ span.flatpickr-weekday {
   max-width: 274px;
   font-size: 18px;
 }
+@media (max-width: 900px) { 
 
+.page__booking {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+}
 @media (min-width: 768px) {
   .page__routes {
     padding: 0 20px;
@@ -2448,17 +2444,7 @@ span.flatpickr-weekday {
     font-size: 30px;
   }
 
-  .advantage__list {
-    max-width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
+
 
   .advantage__item {
     display: block;
@@ -3344,3 +3330,63 @@ margin-top: 10px;
 		font-size: 18px;
 		font-family: "Proxima Nova Regular", Arial, sans-serif;
 	}
+
+	.swiper-pagination-bullet {
+		margin-right: 8px!important;
+		margin-left: 0 !important;
+		width: 10px;
+		height: 10px;
+		border: 2px solid #315ea2;
+		background-color: transparent;
+		opacity: 1;
+	}
+	.swiper-pagination-bullet:last-child {
+		margin-right: 0 !important;
+	}
+	.swiper-pagination-bullet-active {
+		background-color: #315ea2;
+	}
+
+	@media (min-width: 1200px) { 
+			.swiper-pagination {
+				display: none;
+			}
+
+			.advantage__list {
+				max-width: 320px;
+				margin: 0 auto;
+				padding: 0;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				justify-content: center;
+				list-style: none;
+			}
+
+			.advantage__list {
+				max-width: 100%;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+				-webkit-box-pack: justify;
+				-ms-flex-pack: justify;
+				justify-content: space-between;
+			}
+
+	}
+
+				.swiper-slide {
+				height: auto;
+				width: auto;
+			}
+			.swiper-wrapper {
+				height: auto;
+				width: auto;
+			}
+
+
+

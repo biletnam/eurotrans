@@ -6,9 +6,10 @@
 		<title>EuroTrans - заказ и бронирование автобсу</title>
 		
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta charset="utf-8">
+		<meta charset="utf-8">
+		
+		<link rel="stylesheet" href="libs/swiper/swiper.min.css">
 		<link rel="stylesheet" href="css/style.css">
-		<!-- <link rel="stylesheet" href="libs/swiper/swiper.min.css"> -->
 		
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		
@@ -150,62 +151,45 @@
         </section>
         <section class="advantage page__advantage">
 						<h1 class="advantage__title text text_semibold">Преимущество бронирования у нас</h1>
-												<!-- Slider main container -->
 
-            
 							<div class="swiper-container">
-									<!-- Additional required wrapper -->
-									<div class="swiper-wrapper">
-											<!-- Slides -->
-											<ul class="advantage__list">
+									<div class="swiper-wrapper advantage__list">
 										<div class="swiper-slide">
-											<li class="advantage__item advantage__item_insurance">
+											<div class="advantage__item advantage__item_insurance">
 												<p class="advantage__subtitle text text_semibold">Все пассажиры застрахованны</p>
 												<p class="advantage__content text text_regular">В стоимость билета включено страхование.</p>
-											</li>
+											</div>
 										</div>
 										<div class="swiper-slide">
-											<li class="advantage__item advantage__item_safety">
+											<div class="advantage__item advantage__item_safety">
 													<p class="advantage__subtitle text text_semibold">Безопасный поездки</p>
 													<p class="advantage__content text text_regular">Наши автобусы проходят технический осмотр, а водители медицинскую проверку перед каждой поездкой. На случай непредвиденных ситуаций у нас всегда есть дежурный водитель и резервный автобус.</p>
-											</li>
+											</div>
 										</div>
 										<div class="swiper-slide">
-											<li class="advantage__item advantage__item_driver">
+											<div class="advantage__item advantage__item_driver">
 													<p class="advantage__subtitle text text_semibold">Опытные водители</p>
 													<p class="advantage__content text text_regular">Вас будет перевозить водитель со стажем пассажирских перевозок не менее 10 лет.</p>
-											</li>
+											</div>
 										</div>
 										<div class="swiper-slide">
-											<li class="advantage__item advantage__item_card-payment">
+											<div class="advantage__item advantage__item_card-payment">
 													<p class="advantage__subtitle text text_semibold">Безопасная олата картой</p>
 													<p class="advantage__content text text_regular">Мы работаем только с надежными системами приема платежей, которые шифруют данные и регулярно проходят проверку безопасности по стандартам Visa и Mastercard.</p>
-											</li>
+											</div>
 										</div>
 										<div class="swiper-slide">
-											<li class="advantage__item advantage__item_station">
+											<div class="advantage__item advantage__item_station">
 													<p class="advantage__subtitle text text_semibold">Остановки каждые 4 часа для обеда и отдыха</p>
 													<p class="advantage__content text text_regular">Ваш маршрут предусматривает необходимые остановки в местах, где можно можно легко перекусить или плотно пообедать домашней едой, а также пройтись и размяться.</p>
-											</li>
+											</div>
 										</div>
-											</ul>
 								</div>
 								<!-- If we need pagination -->
 								<div class="swiper-pagination"></div>
 					
-						
-																
-
 						</div>
-            <div class="control advantage__control">
-                <ul class="control__list">
-                    <li class="control__item control__item_active"><span class="visually-hidden">0</span></li>
-                    <li class="control__item"><span class="visually-hidden">1</span></li>
-                    <li class="control__item"><span class="visually-hidden">2</span></li>
-                    <li class="control__item"><span class="visually-hidden">3</span></li>
-                    <li class="control__item"><span class="visually-hidden">4</span></li>
-                </ul>
-            </div>
+
         </section>
         <section class="feedback page__feedback">
             <div class="feedback__wrapper">
@@ -226,80 +210,87 @@
             <header class="buses__header">
                 <h2 class="buses__title text text_semibold">Комфортабельные автобусы</h2>
                 <p class="buses__header-description text text_regular">все для удобства вашей поездки</p>
-            </header>
-            <ul class="buses__list">
-                <li class="buses__item">
-                    <picture class="buses__picture">
-                        <source type="image/webp" srcset="img/mercedes-mobile.webp"><img class="buses__image" src="img/mercedes-mobile.jpg" alt="Mercedes Sprinter">
-                    </picture>
-                    <div class="buses__container">
-                        <p class="buses__model text text_semibold">Mercedes Sprinter
-                            <ul class="buses__features-list">
-                                <li class="buses__features-item text text_regular">Комфортные сидения</li>
-                                <li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
-                                <li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
-                            </ul>
-                        </p>
-                    </div>
-                </li>
-                <li class="buses__item">
-                    <picture class="buses__picture">
-                        <source type="image/webp" srcset="img/hyundai-mobile.webp"><img class="buses__image" src="img/hyundai-mobile.jpg" alt="Hyundai">
-                    </picture>
-                    <div class="buses__container">
-                        <p class="buses__model text text_semibold">Hyundai
-                            <ul class="buses__features-list">
-                                <li class="buses__features-item text text_regular">Комфортные сидения</li>
-                                <li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
-                                <li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
-                                <li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
-                            </ul>
-                        </p>
-                    </div>
-                </li>
-                <li class="buses__item">
-                    <picture class="buses__picture">
-                        <source type="image/webp" srcset="img/1-stage-mobile.webp"><img class="buses__image" src="img/1-stage-mobile.jpg" alt="1,5 этажные автобусы">
-                    </picture>
-                    <div class="buses__container">
-                        <p class="buses__model text text_semibold">1,5 этажные автобусы
-                            <ul class="buses__features-list">
-                                <li class="buses__features-item text text_regular">Комфортные сидения</li>
-                                <li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
-                                <li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
-                                <li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
-                                <li class="buses__features-item text text_regular">Туалет</li>
-                                <li class="buses__features-item text text_regular">Мини-кухня</li>
-                            </ul>
-                        </p>
-                    </div>
-                </li>
-                <li class="buses__item">
-                    <picture class="buses__picture">
-                        <source type="image/webp" srcset="img/2-stage-mobile.webp"><img class="buses__image" src="img/2-stage-mobile.jpg" alt="2 этажные автобусы">
-                    </picture>
-                    <div class="buses__container">
-                        <p class="buses__model text text_semibold">2 этажные автобусы
-                            <ul class="buses__features-list">
-                                <li class="buses__features-item text text_regular">Комфортные сидения</li>
-                                <li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
-                                <li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
-                                <li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
-                                <li class="buses__features-item text text_regular">Туалет</li>
-                                <li class="buses__features-item text text_regular">Мини-кухня</li>
-                            </ul>
-                        </p>
-                    </div>
-                </li>
-            </ul>
-            <div class="control buses__control">
-                <ul class="control__list">
-                    <li class="control__item control__item_active"><span class="visually-hidden">0</span></li>
-                    <li class="control__item"><span class="visually-hidden">1</span></li>
-                    <li class="control__item"><span class="visually-hidden">2</span></li>
-                    <li class="control__item"><span class="visually-hidden">3</span></li>
-                </ul>
-            </div>
+						</header>
+								 <div class="swiper-buses">
+									<div class="swiper-wrapper buses__list">
+										<div class="swiper-slide">
+											<div class="buses__item">
+												<picture class="buses__picture">
+														<source type="image/webp" srcset="img/mercedes-mobile.webp"><img class="buses__image" src="img/mercedes-mobile.jpg" alt="Mercedes Sprinter">
+												</picture>
+												<div class="buses__container">
+														<p class="buses__model text text_semibold">Mercedes Sprinter
+																<ul class="buses__features-list">
+																		<li class="buses__features-item text text_regular">Комфортные сидения</li>
+																		<li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
+																		<li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
+																</ul>
+														</p>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+									    <div class="buses__item">
+												<picture class="buses__picture">
+														<source type="image/webp" srcset="img/hyundai-mobile.webp"><img class="buses__image" src="img/hyundai-mobile.jpg" alt="Hyundai">
+												</picture>
+												<div class="buses__container">
+														<p class="buses__model text text_semibold">Hyundai
+																<ul class="buses__features-list">
+																		<li class="buses__features-item text text_regular">Комфортные сидения</li>
+																		<li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
+																		<li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
+																		<li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
+																</ul>
+														</p>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="buses__item">
+												<picture class="buses__picture">
+														<source type="image/webp" srcset="img/1-stage-mobile.webp"><img class="buses__image" src="img/1-stage-mobile.jpg" alt="1,5 этажные автобусы">
+												</picture>
+												<div class="buses__container">
+														<p class="buses__model text text_semibold">1,5 этажные автобусы
+																<ul class="buses__features-list">
+																		<li class="buses__features-item text text_regular">Комфортные сидения</li>
+																		<li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
+																		<li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
+																		<li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
+																		<li class="buses__features-item text text_regular">Туалет</li>
+																		<li class="buses__features-item text text_regular">Мини-кухня</li>
+																</ul>
+														</p>
+												</div>
+											</div>
+										</div>
+										<div class="swiper-slide">
+											<div class="buses__item">
+												<picture class="buses__picture">
+														<source type="image/webp" srcset="img/2-stage-mobile.webp"><img class="buses__image" src="img/2-stage-mobile.jpg" alt="2 этажные автобусы">
+												</picture>
+												<div class="buses__container">
+														<p class="buses__model text text_semibold">2 этажные автобусы
+																<ul class="buses__features-list">
+																		<li class="buses__features-item text text_regular">Комфортные сидения</li>
+																		<li class="buses__features-item text text_regular"> Откидывающиеся сидения</li>
+																		<li class="buses__features-item text text_regular">Индивидуальный кондиционер</li>
+																		<li class="buses__features-item text text_regular">Микрофон для громкой связи с пассажирами</li>
+																		<li class="buses__features-item text text_regular">Туалет</li>
+																		<li class="buses__features-item text text_regular">Мини-кухня</li>
+																</ul>
+														</p>
+												</div>
+											</div>
+										</div>
+								</div>
+								<!-- If we need pagination -->
+								<div class="swiper-pagination"></div>
+					
+						</div>
+          
+
         </section>
         <!--include blocks/route-map/route-map-->
         <section class="features page__features">
@@ -322,13 +313,7 @@
 							</div>
 						</div>
 
-            <div class="control features__control">
-                <ul class="control__list">
-                    <li class="control__item control__item_active"><span class="visually-hidden">0</span></li>
-                    <li class="control__item"><span class="visually-hidden">1</span></li>
-                    <li class="control__item"><span class="visually-hidden">2</span></li>
-                </ul>
-            </div>
+
         </section>
         <section class="booking page__booking">
             <header class="booking__header">
@@ -397,12 +382,7 @@
                         <p class="booking__description text text_semibold">-50% с билета на детский билет</p>
                     </li>
                 </ul>
-                <div class="control booking__control">
-                    <ul class="control__list">
-                        <li class="control__item control__item_active"><span class="visually-hidden">0</span></li>
-                        <li class="control__item"><span class="visually-hidden">1</span></li>
-                    </ul>
-                </div>
+  
             </section> -->
         </section>
     </main>
@@ -519,7 +499,7 @@
         });
 		</script>
 		
-		<!-- <script src="libs/swiper/swiper.min.js"></script> -->
+		<script src="libs/swiper/swiper.min.js"></script>
 
 		<script src="js/main.js"></script>
 
