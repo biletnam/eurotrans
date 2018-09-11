@@ -1,7 +1,7 @@
 <?
 require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_cityes.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_tikets.php";
-echo '<pre>';print_r($arTikets);echo '</pre>';
+//echo '<pre>';print_r($arTikets);echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -18,11 +18,6 @@ echo '<pre>';print_r($arTikets);echo '</pre>';
 <body class="page page_inner">
 <header class="main-header main-header_booking">
   <div class="main-header__top"><a class="logo main-header__logo" href="/"><img class="logo__image" src="img/logo.png"></a>
-    <ul class="breadcrumbs">
-      <li class="breadcrumbs__item breadcrumbs__item_active text text_regular">Выбор</li>
-      <li class="breadcrumbs__item text text_regular">Оформление</li>
-      <li class="breadcrumbs__item text text_regular">Оплата</li>
-    </ul>
   </div>
   <div class="main-header__booking-form">
     <h1 class="main-header__title text text_regular">
@@ -100,33 +95,41 @@ echo '<pre>';print_r($arTikets);echo '</pre>';
       <h2 class="tickets__title text text_regular">Все рейсы</h2>
     <? endif ?>
     <ul class="tickets__list">
-      <?foreach ($response->routes as $routes):
-          foreach ($routes as $route)
-            {
-                foreach ($route as $point)
-                {
-                    if (!(strpos(trim($point->locality), $fromCity) === false)):?>
-                          <li class="tickets__item ticket">
-                              <div class="ticket__content">
-                                  <p class="ticket__time text text_regular"><span class="ticket__time-from"><?= $route->time_start ?></span><span
-                                              class="ticket__date"><?=$route->date ?></span><span class="ticket__time-full"><?= $route->time_in_route ?></span><span
-                                              class="ticket__time-to"><?= $route->time_end ?></span><span class="ticket__date"><?= $route->date_end ?></span></p>
-                                  <p class="ticket__routes text text_regular"><span class="ticket__station-from"><?= $route->route[0]->locality ?></span><span
-                                              class="ticket__station-to"><?= $route->route[count($route->route) - 1]->locality ?></span>
-                                  </p>
-                              </div>
-                              <div class="ticket__price">
-                                  <p class="ticket__order text text_regular">
-                                      <? //$price = $route->route[count($route->route) - 1]->price_to->adult * $adult + $route->route[count($route->route) - 1]->price_to->children * $children ?>
-                                      <?$price = ($point->price_from->adult*$adult)+($point->price_from->adult*$children);?>
-                                      <?= $price ?> р.
-                                  </p><a class="ticket__link button button_theme_red text text_regular" href="formation.php?id=<?= $route->route[count($route->route) - 1]->id ?>&adult=<?=$adult?>&children=<?=$children?>">Купить билет</a>
-                              </div>
-                          </li>
-                    <?endif;
-                }
-          }
-        endforeach; ?>
+      <?foreach ($arTikets->routes as $routes)
+          {?>
+            <li class="tickets__item ticket">
+                <div class="ticket__content">
+                    <p class="ticket__time text text_regular"><span class="ticket__time-from"><?= $routes->time_start ?></span>
+                        <span class="ticket__date"><?= $routes->date ?></span>
+                        <span class="ticket__time-full"><?= $routes->time_in_route ?></span>
+                        <span class="ticket__time-to"><?= $routes->time_end ?></span>
+                        <span class="ticket__date"><?= $routes->date_end ?></span>
+                    </p>
+                    <p class="ticket__routes text text_regular">
+                        <?foreach ($routes->route as $key => $point)
+                        {
+                            if ($key == 0):?>
+                                <span class="ticket__station-from"><?= $routes->from  ?></span>
+                            <?else:?>
+                                <span class="ticket__station-from"><?= $point->locality?> Время прибытия:
+                                    <?=$point->time_to_station; ?>
+                                </span>
+                            <?endif;?>
+                        <?}?>
+                                <span class="ticket__station-from"><?= $routes->to  ?></span>
+                    </p>
+                </div>
+                <div class="ticket__price">
+                    <p class="ticket__order text text_regular">
+                        <?$price = ($routes->route[0]->price_from->adult * $adult)+($routes->route[0]->price_from->children * $children);?>
+                        <?=$price?> р.
+                    </p>
+                    <a class="ticket__link button button_theme_red text text_regular" href="formation.php?id=<?= $routes->id ?>&adult=<?= $adult ?>&children=<?= $children ?>">
+                        Купить билет
+                    </a>
+                </div>
+            </li>
+        <?}?>
     </ul>
   </section>
 </main>

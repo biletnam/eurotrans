@@ -10,12 +10,15 @@ if (isset($_GET)) {
   $stripGet = array_map('strip_tags', $_GET);
 }
 
-$db = connect();
+//$db = connect();
 
 if (isset($_POST)) {
   $postData = file_get_contents('php://input');
   $data = json_decode($postData, true);
+  echo '<pre>';print_r($postData);echo '</pre>';
 }
+echo '<pre>';print_r($data);echo '</pre>';
+echo '<pre>';print_r($_POST);echo '</pre>';
 
 $typeResponse = isset($data['type']) ? $data['type'] : '';
 $eventResponse = isset($data['event']) ? $data['event'] : '';

@@ -1,7 +1,6 @@
 <?require_once $_SERVER['DOCUMENT_ROOT']."/utils/make_cityes.php";?>
 <!DOCTYPE html>
 <html>
-
 <head>
 		<title>EuroTrans - заказ и бронирование автобсу</title>
 		

@@ -10,11 +10,11 @@ if (isset($_GET)) {
   $stripGet = array_map('strip_tags', $_GET);
 }
 
-$db = connect();
+//$db = connect();
 
 $adult = isset($stripGet['adult']) ? intval($stripGet['adult']) : 0;
 $children = isset($stripGet['children']) ? intval($stripGet['children']) : 0;
-$baby = isset($stripGet['baby']) ? intval($stripGet['baby']) : 0;
+//$baby = isset($stripGet['baby']) ? intval($stripGet['baby']) : 0;
 $idRoute = isset($stripGet['id']) ? intval($stripGet['id']) : 0;
 
 $passenger = $adult + $children;
@@ -22,15 +22,16 @@ $passenger = $adult + $children;
 $getRoute = "SELECT `price_do` FROM `ways` WHERE id = ?";
 $createTransaction = "INSERT INTO `transaction` (`status`, `amount`, `date_created`,`date_changed`,`transaction_id`,`count_adult`,`count_children`,`count_baby`) VALUES ('created', ?, NOW(), NOW(), NULL, ?, ?, ?)";
 
-$data = getData($db, $getRoute, [$idRoute]);
-$data = explode(":", $data[0]['price_do']);
+//$data = getData($db, $getRoute, [$idRoute]);
+//$data = explode(":", $data[0]['price_do']);
 
-$mainPrice = $data[0];
-$minPrice = $data[1];
+//$mainPrice = $data[0];
+//$minPrice = $data[1];
 
-$price = ($mainPrice * $adult) + ($minPrice * $children);
+//$price = ($minPrice * $adult) + ($minPrice * $children);
+$price = 3400;
 
-executeQuery($db, $createTransaction, [$price, $adult, $children, $baby])
+//executeQuery($db, $createTransaction, [$price, $adult, $children, $baby])
 ?>
 
 <!DOCTYPE html>
@@ -146,7 +147,7 @@ executeQuery($db, $createTransaction, [$price, $adult, $children, $baby])
 
           <p class="formation__container">
             <label for="phoneUser-<?= $i ?>" class="formation__label text text_regular">Телефон</label>
-            <input type="tel" id="phoneUser-<?= $i ?>" name="phoneUser-<?= $i ?>" placeholder="ivanov@mail.ru"
+            <input type="tel" id="phoneUser-<?= $i ?>" name="phoneUser-<?= $i ?>" placeholder="+7 999 999 99 99"
                    class="formation__input text text_regular" required autocomplete="off">
           </p>
         </div>
