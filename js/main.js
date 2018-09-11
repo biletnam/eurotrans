@@ -411,9 +411,10 @@ function loopRemoveAttributeClass(arr) {
 }
 
 
-var swiperInitArr = [false, false];
-
-
+var swiperInitArr = {
+  advantageSlider: false,
+  busesSlider: false
+};
 
 
 function initSwiper(swiperInitNumber, swiperName, swiperWrapper) {
@@ -436,16 +437,10 @@ function initSwiper(swiperInitNumber, swiperName, swiperWrapper) {
 
 
     loopAddRemoveClass(
-      containerDekstop,
-      swiperNameWithoutPoint,
-      "container-desktop"
-    );
-    loopAddRemoveClass(
-      wrappersDekstop,
-      "swiper-wrapper",
-      swiperWrapperWithoutPoint
-    );
+      containerDekstop, swiperNameWithoutPoint, "container-desktop");
+    loopAddRemoveClass(wrappersDekstop, "swiper-wrapper", swiperWrapperWithoutPoint);
     loopAddRemoveClass(slidersDekstop, "swiper-slide", "slide-desktop");
+
 
 		swiperInitArr[swiperInitNumber] = new Swiper(swiperName, {
       slidesPerView: 1,
@@ -456,13 +451,11 @@ function initSwiper(swiperInitNumber, swiperName, swiperWrapper) {
         clickable: true 
       }
 		});
-		
   } else if (screenWidth > 1200 && swiperInitArr[swiperInitNumber] != false) {
-    console.log("yes");
-		
-    swiperInitArr[swiperInitNumber].destroy();
-    swiperInitArr[swiperInitNumber] = false;
 
+		swiperInitArr[swiperInitNumber].destroy();
+		swiperInitArr[swiperInitNumber] = false;
+		
     loopAddRemoveClass(container, "container-desktop", swiperNameWithoutPoint);
     loopAddRemoveClass(wrappers, swiperWrapperWithoutPoint, "swiper-wrapper");
     loopAddRemoveClass(sliders, "slide-desktop", "swiper-slide");
@@ -475,16 +468,18 @@ function initSwiper(swiperInitNumber, swiperName, swiperWrapper) {
 
 
 //Swiper plugin initialization
-initSwiper(0, ".swiper-container", ".advantage__list");
 
-initSwiper(1, ".swiper-buses", "buses__list");
+initSwiper("busesSlider", ".swiper-buses", ".buses__list");
+initSwiper("advantageSlider", ".swiper-advantage", ".advantage__list");
+
 
 //Swiper plugin initialization on window resize
 
 window.addEventListener('resize', function () {
-	initSwiper(0, ".swiper-container", ".advantage__list");
+
+	initSwiper("busesSlider", ".swiper-buses", ".buses__list");
+	initSwiper("advantageSlider", ".swiper-advantage", ".advantage__list");
 	
-	initSwiper(1, ".swiper-buses", ".buses__list");
 });
 
 

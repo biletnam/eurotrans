@@ -151,7 +151,7 @@
         <section class="advantage page__advantage">
 						<h1 class="advantage__title text text_semibold">Преимущество бронирования у нас</h1>
 
-							<div class="swiper-container">
+							<div class="swiper-advantage">
 									<div class="swiper-wrapper advantage__list">
 										<div class="swiper-slide">
 											<div class="advantage__item advantage__item_insurance">

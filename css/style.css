@@ -2725,13 +2725,7 @@ span.flatpickr-weekday {
     margin-top: -10px;
   }
 
-  .ticket__routes {
-    padding: 0 0 0 40px;
-    background-image: url("../img/routes.png");
-    background-repeat: no-repeat;
-    background-position-x: 0;
-    background-size: 25px 50px;
-  }
+
 
   .execution {
     max-width: 600px;
@@ -3389,4 +3383,81 @@ margin-top: 10px;
 			}
 
 
+	 .ticket__station-from {
+    padding: 0 0 0 40px;
+		position: relative;
+	}
+	
+	 .ticket__station-from::before {
+		content: '';
+		position: absolute;
+		left: 5px;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		border: 1.5px solid #0d4292;
+	 }
 
+	 .ticket__station-from::after {
+		 content: '';
+		 position: absolute;
+		 top: calc(50% + 4px);
+		 left: 10px;
+		 width: 1px;
+		 height: 23px;
+		 background-color: #0d4292
+	 }
+	 .ticket__station-from:last-child::after {
+		 width: 0;
+	 }
+	
+
+	 
+	@media (max-width: 768px) { 
+	 .ticket__station-from {
+    padding: 0 0 0 20px;
+	}
+	
+	 .ticket__station-from::before {
+		left: 3px;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background-color: #0d4292;
+		border: none;
+	 }
+		.ticket__station-from::after {
+			width: 0;
+		}
+
+	}
+
+	.swiper-buses {
+		margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+	}
+
+	.swiper-advantage {
+		margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+	}
