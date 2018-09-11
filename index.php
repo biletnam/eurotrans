@@ -151,7 +151,7 @@
         <section class="advantage page__advantage">
 						<h1 class="advantage__title text text_semibold">Преимущество бронирования у нас</h1>
 
-							<div class="swiper-advantage">
+							<div class="swiper-container">
 									<div class="swiper-wrapper advantage__list">
 										<div class="swiper-slide">
 											<div class="advantage__item advantage__item_insurance">
@@ -210,7 +210,7 @@
                 <h2 class="buses__title text text_semibold">Комфортабельные автобусы</h2>
                 <p class="buses__header-description text text_regular">все для удобства вашей поездки</p>
 						</header>
-								 <div class="swiper-buses">
+								 <div class="swiper-container">
 									<div class="swiper-wrapper buses__list">
 										<div class="swiper-slide">
 											<div class="buses__item">
@@ -293,23 +293,34 @@
         </section>
         <!--include blocks/route-map/route-map-->
         <section class="features page__features">
-            <h2 class="features__title text text_semibold">Исправные и чистые автобусы</h2>
-						<div class="ready__items">
-							<div class="ready__item">
-								<img src="img/features-1.jpg" alt="EuroTrans" class="ready__item-img">
-								<h3 class="ready__item-title">Отправляем автобусы на ТО перед каждой поездкой.</h3>
-								<p class="ready__item-text">Проверяем транспорт на собственной станции техосмотра. В случае выявления неисправности, на рейс выходит резервный автобус.</p>
-							</div>
-							<div class="ready__item">
-								<img src="img/features-2.jpg" alt="EuroTrans" class="ready__item-img">
-								<h3 class="ready__item-title">Проводим медосмотр водителей перед рейсом. </h3>
-								<p class="ready__item-text">Если наш мед.персонал выявляет отклонения от нормы в самочувствии водителя, его заменяет коллега.</p>
-							</div>
-							<div class="ready__item">
-								<img src="img/features-3.jpg" alt="EuroTrans" class="ready__item-img">
-								<h3 class="ready__item-title">Выводим транспорт на маршрут только после тщательной уборки. </h3>
-								<p class="ready__item-text">Моем и пылесосим автобусы до и после рейсов.</p>
-							</div>
+						<h2 class="features__title text text_semibold">Исправные и чистые автобусы</h2>
+							<div class="swiper-container">
+								<div class="swiper-wrapper ready__items">
+									<div class="swiper-slide">
+										<div class="ready__item">
+											<img src="img/features-1.jpg" alt="EuroTrans" class="ready__item-img">
+											<h3 class="ready__item-title">Отправляем автобусы на ТО перед каждой поездкой.</h3>
+											<p class="ready__item-text">Проверяем транспорт на собственной станции техосмотра. В случае выявления неисправности, на рейс выходит резервный автобус.</p>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="ready__item">
+											<img src="img/features-2.jpg" alt="EuroTrans" class="ready__item-img">
+											<h3 class="ready__item-title">Проводим медосмотр водителей перед рейсом. </h3>
+											<p class="ready__item-text">Если наш мед.персонал выявляет отклонения от нормы в самочувствии водителя, его заменяет коллега.</p>
+										</div>
+									</div>
+									<div class="swiper-slide">
+
+									
+										<div class="ready__item">
+											<img src="img/features-3.jpg" alt="EuroTrans" class="ready__item-img">
+											<h3 class="ready__item-title">Выводим транспорт на маршрут только после тщательной уборки. </h3>
+											<p class="ready__item-text">Моем и пылесосим автобусы до и после рейсов.</p>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-pagination"></div>
 						</div>
 
 
@@ -480,7 +491,7 @@
 		</div>
 	</div>
 
-
+	<div class="top-scroll"></div>
 
     <script src="js/flatpickr.min.js"></script>
     <script>

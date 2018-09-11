@@ -411,75 +411,85 @@ function loopRemoveAttributeClass(arr) {
 }
 
 
-var swiperInitArr = {
+var swiperInitObj = {
   advantageSlider: false,
-  busesSlider: false
+  busesSlider: false,
+  featuresSlider: false
 };
 
 
-function initSwiper(swiperInitNumber, swiperName, swiperWrapper) {
-  var containerDekstop = document.querySelectorAll(".container-desktop");
-  var wrappersDekstop = document.querySelectorAll(swiperWrapper);
-  var slidersDekstop = document.querySelectorAll(".slide-desktop");
+function initSwiper(swiperInitName, wrapper) {
 
-  var container = document.querySelectorAll(swiperName);
-  var wrappers = document.querySelectorAll(".swiper-wrapper");
-  var sliders = document.querySelectorAll(".swiper-slide");
+	var wrapps = {
+		containerD: "" + wrapper + " .container-desktop",
+		wrapperD: "" + wrapper + " .wrapper-desktop",
+		slideD: "" + wrapper + " .slide-desktop",
+		containerM: "" + wrapper + " .swiper-container",
+		wrapperM: "" + wrapper + " .swiper-wrapper",
+		slideM: "" + wrapper + " .swiper-slide"
+	};
 
-  var swiperWrapperWithoutPoint = swiperWrapper.slice(1, swiperWrapper.length);
-  var swiperNameWithoutPoint = swiperName.slice(1, swiperName.length);
+	var containerDekstop = document.querySelectorAll(wrapps.containerD);
+	var wrappersDekstop = document.querySelectorAll(wrapps.wrapperD);
+	var slidersDekstop = document.querySelectorAll(wrapps.slideD);
+
+	var containers = document.querySelectorAll(wrapps.containerM);
+	var wrappers = document.querySelectorAll(wrapps.wrapperM);
+	var sliders = document.querySelectorAll(wrapps.slideM);
 
 	var screenWidth = window.innerWidth;
 	
-	
-
-	if (screenWidth <= 1200 && swiperInitArr[swiperInitNumber] == false) {
+	if (screenWidth <= 1200 && swiperInitObj[swiperInitName] == false) {
 
 
-    loopAddRemoveClass(
-      containerDekstop, swiperNameWithoutPoint, "container-desktop");
-    loopAddRemoveClass(wrappersDekstop, "swiper-wrapper", swiperWrapperWithoutPoint);
-    loopAddRemoveClass(slidersDekstop, "swiper-slide", "slide-desktop");
+		loopAddRemoveClass(containerDekstop, "swiper-container", "container-desktop");
+		loopAddRemoveClass(wrappersDekstop, "swiper-wrapper", "wrapper-desktop");
+		loopAddRemoveClass(slidersDekstop, "swiper-slide", "slide-desktop");
 
 
-		swiperInitArr[swiperInitNumber] = new Swiper(swiperName, {
+		swiperInitObj[swiperInitName] = new Swiper(wrapps.containerM, {
+
       slidesPerView: 1,
-      spaceBetween: 30,
+      spaceBetween: 20,
       loop: true,
       pagination: {
         el: ".swiper-pagination",
-        clickable: true 
-      }
+        clickable: true
+			}, 
+			breakpoints: {
+				1024: {
+					spaceBetween: 10
+				}
+			}
+			
 		});
-  } else if (screenWidth > 1200 && swiperInitArr[swiperInitNumber] != false) {
-
-		swiperInitArr[swiperInitNumber].destroy();
-		swiperInitArr[swiperInitNumber] = false;
 		
-    loopAddRemoveClass(container, "container-desktop", swiperNameWithoutPoint);
-    loopAddRemoveClass(wrappers, swiperWrapperWithoutPoint, "swiper-wrapper");
-    loopAddRemoveClass(sliders, "slide-desktop", "swiper-slide");
+  } else if (screenWidth > 1200 && swiperInitObj[swiperInitName] != false) {
+
+		swiperInitObj[swiperInitName].destroy();
+		swiperInitObj[swiperInitName] = false;
+		
+		loopAddRemoveClass(containers, "container-desktop", "swiper-container");
+		loopAddRemoveClass(wrappers, "wrapper-desktop", "swiper-wrapper");
+		loopAddRemoveClass(sliders, "slide-desktop", "swiper-slide");
 
 		loopRemoveAttributeClass(wrappersDekstop);
 		loopRemoveAttributeClass(slidersDekstop);
 	}
 }
-
-
-
 //Swiper plugin initialization
 
-initSwiper("busesSlider", ".swiper-buses", ".buses__list");
-initSwiper("advantageSlider", ".swiper-advantage", ".advantage__list");
+initSwiper("advantageSlider", ".advantage");
+initSwiper("busesSlider", ".buses");
+initSwiper("featuresSlider", ".features");
 
 
 //Swiper plugin initialization on window resize
 
 window.addEventListener('resize', function () {
-
-	initSwiper("busesSlider", ".swiper-buses", ".buses__list");
-	initSwiper("advantageSlider", ".swiper-advantage", ".advantage__list");
-	
+	initSwiper("advantageSlider", ".advantage");
+	initSwiper("busesSlider", ".buses");
+	initSwiper("featuresSlider", ".features");
 });
 
 
@@ -512,3 +522,30 @@ document.querySelector('.popup-thank__mask').addEventListener('click', function 
 	document.querySelector(".popup-thank").classList.remove("popup-thank--active");
 	document.querySelector('body').style.overflowY = "auto";
 });
+
+
+
+
+var topScroll = document.querySelector(".top-scroll");
+
+window.addEventListener('scroll', function (e) {
+	if (document.body.scrollTop >  document.body.clientHeight) {
+		topScroll.classList.add('top-scroll_active');
+	} else {
+		topScroll.classList.remove('top-scroll_active');
+	}
+});
+
+topScroll.addEventListener("click", function (e) {
+	scrollToTop(500);
+});
+
+function scrollToTop(scrollDuration) {
+	var scrollStep = -window.scrollY / (scrollDuration / 15),
+		scrollInterval = setInterval(function () {
+			if (window.scrollY != 0) {
+				window.scrollBy(0, scrollStep);
+			}
+			else clearInterval(scrollInterval);
+		}, 15);
+}
